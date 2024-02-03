@@ -86,23 +86,23 @@ arrForScroll.forEach(function (item, index) {
 
     // islomjon(qobiq[index], chevron[index], txt[index], txt[index + 1])
 
-    qobiq.forEach(function (item1, index1) {
-        item1.addEventListener(`click`, function () {
-            qobiq.forEach(function (btn, btnIndex) {
-                // btn.classList.remove('active')
-                txt[btnIndex].classList.remove('open')
-                chevron[btnIndex].classList.remove('rotate')
-            })
-            // item1.classList.add('active')
-            txt[index1].classList.add('open')
-            chevron[index1].classList.add('rotate')
-        })
-    })
-
-    // qobiq[index].addEventListener("click", function(){
-    //     txt[index].classList.toggle('open')
-    //     chevron[index].classList.toggle('rotate')
+    // qobiq.forEach(function (item1, index1) {
+    //     item1.addEventListener(`click`, function () {
+    //         qobiq.forEach(function (btn, btnIndex) {
+    //             // btn.classList.remove('active')
+    //             txt[btnIndex].classList.remove('open')
+    //             chevron[btnIndex].classList.remove('rotate')
+    //         })
+    //         // item1.classList.add('active')
+    //         txt[index1].classList.add('open')
+    //         chevron[index1].classList.add('rotate')
+    //     })
     // })
+
+    qobiq[index].addEventListener("click", function(){
+        txt[index].classList.toggle('open')
+        chevron[index].classList.toggle('rotate')
+    })
     search.addEventListener("input", function () {
         qobiq.forEach(function (item5, index) {
             if (item5.textContent.toLocaleLowerCase().indexOf(search.value.toLocaleLowerCase()) > -1) {
@@ -110,24 +110,22 @@ arrForScroll.forEach(function (item, index) {
             } else {
                 item5.style.display = 'none'
             }
-        })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
+        })        
     })
 })
+
+let burger = document.querySelector('.burger')
+let rNav = document.querySelector('.responsive-nav')
+let blur = document.querySelector('.blur')
+
+blur.addEventListener('click', function(){
+    blur.style.left = '100%'
+    rNav.style.left = '-100%'
+})
+
+burger.addEventListener('click', function(){
+    rNav.style.left = "0"
+    blur.style.left = "0"
+})
+
 
