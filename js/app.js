@@ -3,30 +3,52 @@ let search = document.querySelector('#search')
 
 
 let scrollist = document.querySelector('#scroll-list')
-let arr = [
+let arrForScroll = [
+    // Town scroll
     {
         "title": 'Town Scroll',
 
-        "rasm" : '/img/scrols/townscroll.webp',
+        "rasm": '/img/scrols/townscroll.webp',
 
         "text": `  Town scroll bu scroll odatda boshlovchilar uchun mo'ljallangan shaxarga teleport qilish
-        vazifasini bajaradi. Boshlovchilar shaxri (beginers town)ni o'yinchilar T1 deb nomlashadi.`
+        vazifasini bajaradi. Boshlovchilar shaxri (beginers town)ni o'yinchilar T1 deb nomlashadi.`,
+
+        "narxi" : `Sotib olish narxi: 1000gold`
     },
+    // Explorers town scroll
     {
         "title": "Explorers Town Scroll",
 
-        "rasm" : "/img/scrols/Explorers_Town_Scroll.webp",
+        "rasm": "/img/scrols/Explorers_Town_Scroll.webp",
 
-    "text" : `Explorers town scroll bu ikkinchi shaharga teleport qilish uchun ishlatiladigan scroll. Ko'pchilik o'yinchilar ikkinchi shaharni t2(town 2) deb nomlashadi.`
+        "text": `Explorers town scroll bu ikkinchi shaharga teleport qilish uchun ishlatiladigan scroll. Ko'pchilik o'yinchilar ikkinchi shaharni t2(town 2) deb nomlashadi.`,
+
+        "narxi" : `Sotib olish narxi: 2500 gold`
     },
+    // Tracker scroll
     {
-        "title" : `Tracker Scroll`,
-        "rasm" : "/img/scrols/trackerscrol.png",
-        "text" : `Tracker Scroll bu hech qanday teleport scroll emas. Bu scroll faqatgina yo'nalish ko'rsatuvchi vazifani bajaradi. Masalan: Kimnidur qayerdaligini bilmoqchi bo'lsangiz tracker scrolldan foydalanishingiz mumkin. Tracker scroll aniq bir joyni ko'rsatmaydi. U faqatgina yo'nalish ko'rsatadi.`
-    }
+        "title": `Tracker Scroll`,
+        "rasm": "/img/scrols/trackerscrol.png",
+        "text": `Tracker Scroll bu hech qanday teleport scroll emas. Bu scroll faqatgina yo'nalish ko'rsatuvchi vazifani bajaradi. Masalan: Kimnidur qayerdaligini bilmoqchi bo'lsangiz tracker scrolldan foydalanishingiz mumkin. Tracker scroll aniq bir joyni ko'rsatmaydi. U faqatgina yo'nalish ko'rsatadi.`,
+        "narxi" : `Sotib olish narxi: 4000gold`
+    },
+    //Return scroll
+    {
+        "title": `Return Scroll`,
+        "rasm": `/img/scrols/returnscroll.png`,
+        'text': `Return scroll: Bu scrolldan foydalanish orqali siz oxirgi marta qayerda Town scrolldan foydalangan bo'lsangiz yana o'sha joyga qaytishingiz mumkin. Masalan: Siz vampiredan T1 yoki T2 ga teleport town scrolldan foydalanib bordingiz. Agar siz return scrolldan foydalansangiz yana vampirega teleport qilasiz.`,
+        "narxi" : `Sotib olish narxi: 2 Diamond`
+    },
+    // Destination Scroll
+    {
+        "title": `Destination Scroll`,
+        "rasm": `/img/scrols/destination.png`,
+        "text": `Destination Scroll: Bu scroll yordamida siz o'yindagi bir qancha joylarga teleport qilishingiz mumkin.`,
+        "narxi" : `Sotib olish narxi: 5 Diamond`
+    },
 ]
 
-arr.forEach(function (item, index) {
+arrForScroll.forEach(function (item, index) {
     let li = document.createElement('div')
 
     li.innerHTML = `
@@ -43,7 +65,7 @@ arr.forEach(function (item, index) {
               </svg>
                     </div>
                     <p class="townscroll-text" id="scrol-text">
-                        ${item.text}
+                        ${item.text} <br><br> <b class='narx'>${item.narxi}</b>
                     </p>
     </div>
     `;
@@ -53,8 +75,8 @@ arr.forEach(function (item, index) {
     let txt = document.querySelectorAll("#scrol-text")
     let chevron = document.querySelectorAll(".chevron")
 
-    function islomjon (button, chevron, text, text1, chevron1){
-        button.addEventListener('click', function(){
+    function islomjon(button, chevron, text, text1, chevron1) {
+        button.addEventListener('click', function () {
             chevron.classList.toggle('rotate')
             // chevron1.classList.remove('rotate')
             text.classList.toggle('open')
@@ -62,7 +84,7 @@ arr.forEach(function (item, index) {
         })
     }
 
-    islomjon(qobiq[index], chevron[index], txt[index], txt[index+1])
+    islomjon(qobiq[index], chevron[index], txt[index], txt[index + 1])
 
     // qobiq.forEach(function (item1, index1) {
     //     item1.addEventListener(`click`, function () {
@@ -81,11 +103,11 @@ arr.forEach(function (item, index) {
     //     txt[index].classList.toggle('open')
     //     chevron[index].classList.toggle('rotate')
     // })
-    search.addEventListener("input", function(){
-        qobiq.forEach(function(item5 , index){
-            if(item5.textContent.toLocaleLowerCase().indexOf(search.value.toLocaleLowerCase()) > -1){
+    search.addEventListener("input", function () {
+        qobiq.forEach(function (item5, index) {
+            if (item5.textContent.toLocaleLowerCase().indexOf(search.value.toLocaleLowerCase()) > -1) {
                 item5.style.display = 'block'
-            }else{
+            } else {
                 item5.style.display = 'none'
             }
         })

@@ -301,7 +301,7 @@ div :hover .hero-line {
 .chevron {
     width: 30px;
     height: 30px;
-    transition: all .5s;
+    transition: all .7s;
 }
 
 .rotate{
@@ -347,4 +347,22 @@ div :hover .hero-line {
     color: #ffffff5e;
     text-align: center;
     margin-bottom: 20px;
+}
+
+.narx{
+    color: #ff6b6b9f;
+    font-family: sans-serif;
+    font-family: sans-serif;
+    font-size: 15px;
+    /* color: rgba(255, 255, 255, 0.39); */
+    /* background-color: #ffffff0c; */
+    /* border-radius: 0px 0px 0px 24px; */
+    border: none;
+    padding: 0 15px;
+    height: 0;
+    overflow: hidden;
+    line-height: 24px;
+    transition: all .5s;
+    width: 100%;
+
 }
