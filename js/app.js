@@ -75,29 +75,29 @@ arrForScroll.forEach(function (item, index) {
     let txt = document.querySelectorAll("#scrol-text")
     let chevron = document.querySelectorAll(".chevron")
 
-    function islomjon(button, chevron, text, text1, chevron1) {
-        button.addEventListener('click', function () {
-            chevron.classList.toggle('rotate')
-            // chevron1.classList.remove('rotate')
-            text.classList.toggle('open')
-            text1.classList.remove('open')
-        })
-    }
-
-    islomjon(qobiq[index], chevron[index], txt[index], txt[index + 1])
-
-    // qobiq.forEach(function (item1, index1) {
-    //     item1.addEventListener(`click`, function () {
-    //         qobiq.forEach(function (btn, btnIndex) {
-    //             // btn.classList.remove('active')
-    //             txt[btnIndex].classList.remove('open')
-    //             chevron[btnIndex].classList.remove('rotate')
-    //         })
-    //         // item1.classList.add('active')
-    //         txt[index1].classList.add('open')
-    //         chevron[index1].classList.add('rotate')
+    // function islomjon(button, chevron, text, text1, chevron1) {
+    //     button.addEventListener('click', function () {
+    //         chevron.classList.toggle('rotate')
+    //         // chevron1.classList.remove('rotate')
+    //         text.classList.toggle('open')
+    //         text1.classList.remove('open')
     //     })
-    // })
+    // }
+
+    // islomjon(qobiq[index], chevron[index], txt[index], txt[index + 1])
+
+    qobiq.forEach(function (item1, index1) {
+        item1.addEventListener(`click`, function () {
+            qobiq.forEach(function (btn, btnIndex) {
+                // btn.classList.remove('active')
+                txt[btnIndex].classList.remove('open')
+                chevron[btnIndex].classList.remove('rotate')
+            })
+            // item1.classList.add('active')
+            txt[index1].classList.add('open')
+            chevron[index1].classList.add('rotate')
+        })
+    })
 
     // qobiq[index].addEventListener("click", function(){
     //     txt[index].classList.toggle('open')
