@@ -8,7 +8,6 @@ body {
     background-color: #000;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     min-height: 100vh;
 }
 
@@ -50,23 +49,23 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding-right: 20px;
 }
 
 .header-logo {
-    font-size: 90px;
-    font-weight: 800;
+    font-size: 40px;
+    font-weight: 600;
     text-decoration: none;
     display: flex;
     justify-content: center;
     max-width: 650px;
     color: white;
-    gap: 20px;
+    gap: 10px;
     text-transform: capitalize;
     background: #000;
-    margin-bottom: 50px;
-    margin-left: auto;
-    margin-right: auto;
     transition: all .5s;
 }
 
@@ -77,11 +76,10 @@ body {
 
 .nav-list {
     display: flex;
+    gap: 34px;
     max-width: 800px;
     justify-content: space-between;
     list-style: none;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .nav-link {
@@ -89,7 +87,7 @@ body {
     text-decoration: none;
     font-family: sans-serif;
     font-weight: 800;
-    font-size: 25px;
+    font-size: 18px;
     transition: all .4s;
 }
 
@@ -160,6 +158,7 @@ div :hover .hero-line {
 }
 
 .footer {
+    margin-top: auto;
     padding-top: 20px;
     padding-bottom: 20px;
 }
